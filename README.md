@@ -14,7 +14,7 @@ The script will create a folder "build_[TARGET]".
 
 ## Source Yocto build environment
 
-. ./poky/oe-init-build-env build_[TARGET] $BUILD_DIR
+	. ./poky/oe-init-build-env build_[TARGET] $BUILD_DIR
 
 ## TES only: Update SVN credentials
 
@@ -22,15 +22,17 @@ Update SVN credentials in ./conf/svn.inc
 
 ## Build Yocto artifacts
 
-bitbake virtual/bootloader
-bitbake tes-davenx-evalkit-image
-bitbake tes-davenx-evalkit-image -c populate_sdk
+	bitbake virtual/bootloader
+
+	bitbake tes-davenx-evalkit-image
+
+	bitbake tes-davenx-evalkit-image -c populate_sdk
 
 ## Generate SD card image
 
 * Stratix 10 SoCDK:
-  * wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
+  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
 * Arria 10 SoCDK:
-  * wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
+  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
 * Arria 10 Dreamchip SoM:
-  * wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
+  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
