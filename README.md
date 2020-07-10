@@ -33,6 +33,6 @@ Update SVN credentials in ./conf/svn.inc
 * Stratix 10 SoCDK:
   * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
 * Arria 10 SoCDK:
-  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
+  * 		wic create sdimage-tes-arria10-socdk -e tes-davenx-evalkit-image
 * Arria 10 Dreamchip SoM:
-  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
+  * 		wic create sdimage-tes-dreamchip-arria10som -e tes-davenx-evalkit-image
