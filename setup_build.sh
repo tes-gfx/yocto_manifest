@@ -1,4 +1,4 @@
-TARGET=$2
+TARGET=$1
 BUILD_DIR=./build_$TARGET
 
 if [ $# -ne 1 ]
@@ -19,5 +19,5 @@ cd ..
 echo YOCTOROOT = \"$(pwd)\" >> $BUILD_DIR/conf/bblayers.conf
 
 echo -------------------------------------------------------------------------------
-echo Source Bitbake environment with . ./poky/oe-init-build-env build_$TARGET $BUILD_DIR
+echo Source Bitbake environment with . ./poky/oe-init-build-env $BUILD_DIR
 echo Please update $BUILD_DIR/conf/svn.inc
