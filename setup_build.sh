@@ -4,6 +4,7 @@ BUILD_DIR=./build_$TARGET
 if [ $# -ne 1 ]
 then
 	echo Single target parameter needed. Choose one of:
+	echo   c5     - Cyclone 5
 	echo   a10    - Arria 10
 	echo   s10    - Stratix 10
 	exit 1
