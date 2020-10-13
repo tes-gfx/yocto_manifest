@@ -7,6 +7,7 @@ Downloads all required repositories.
 ## setup_build.sh [TARGET]
 Sets up a build directory including all Yocto config files to enable building TES Yocto images.
 A TARGET parameter defining the target is required:
+* c5 - Cyclone 5
 * a10 - Arria 10
 * s10 - Stratix 10
 
@@ -36,3 +37,5 @@ Update SVN credentials in ./conf/svn.inc
   * 		wic create sdimage-tes-arria10-socdk -e tes-davenx-evalkit-image
 * Arria 10 Dreamchip SoM:
   * 		wic create sdimage-tes-dreamchip-arria10som -e tes-davenx-evalkit-image
+* Cyclone 5 DE0 Nano SoC:
+  * 		wic create sdimage-tes-cyclone5-de0-nano -e tes-ip-evalkit-image
