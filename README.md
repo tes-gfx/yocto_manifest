@@ -25,9 +25,9 @@ Update SVN credentials in ./conf/svn.inc
 
 	bitbake virtual/bootloader
 
-	bitbake tes-davenx-evalkit-image
+	bitbake [IMAGE_NAME]
 
-	bitbake tes-davenx-evalkit-image -c populate_sdk
+	bitbake [IMAGE-NAME] -c populate_sdk
 
 ## Generate SD card image
 
@@ -39,3 +39,5 @@ Update SVN credentials in ./conf/svn.inc
   * 		wic create sdimage-tes-dreamchip-arria10som -e tes-davenx-evalkit-image
 * Cyclone 5 DE0 Nano SoC:
   * 		wic create sdimage-tes-cyclone5-de0-nano -e tes-ip-evalkit-image
+* Cyclone 5 DE0 Nano SoC w/ GPIO_0 LCD display:
+  * 		wic create sdimage-tes-cyclone5-de0-nano -e tes-dave2d-lcd-image
