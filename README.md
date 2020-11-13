@@ -20,9 +20,10 @@ The script will create a folder "build_[TARGET]".
 
 	. ./poky/oe-init-build-env build_[TARGET] $BUILD_DIR
 
-## TES only: Update SVN credentials
+## TES internal only: Update SVN credentials
 
 Update SVN credentials in ./conf/svn.inc
+Make sure to add "tesintern" to OVERRIDES. This will enable source fetching from internal SVN.
 
 ## Build Yocto artifacts
 
