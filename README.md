@@ -23,7 +23,9 @@ The script will create a folder "build_[TARGET]".
 ## TES internal only: Update SVN credentials
 
 Update SVN credentials in ./conf/svn.inc
-Make sure to add "tesintern" to OVERRIDES. This will enable source fetching from internal SVN.
+
+Make sure to append "tesintern" to OVERRIDES variable in ./conf/local.conf.
+This will enable source fetching from internal SVN.
 
 ## Build Yocto artifacts
 
