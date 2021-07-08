@@ -6,6 +6,7 @@ Downloads all required repositories.
 A protocol parameter defining the protocol for GIT is required:
 * ssh   - Use SSH protocol (a private key file might be required)
 * https - Use HTTPS protocol
+A dir parameter is required, pointing to the directory where the repos will be cloned to.
 
 ## setup_build.sh [TARGET]
 Sets up a build directory including all Yocto config files to enable building TES Yocto images.
@@ -13,6 +14,7 @@ A TARGET parameter defining the target is required:
 * c5  - Cyclone 5
 * a10 - Arria 10
 * s10 - Stratix 10
+A dir parameter is required, pointing to the directory where the repos have been cloned to.
 
 The script will create a folder "build_[TARGET]".
 

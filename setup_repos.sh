@@ -1,10 +1,14 @@
 RELEASE=dunfell
 
-if [ $# -ne 1 ]
+if [ $# -ne 2 ]
 then
-	echo Single target parameter needed. Choose one of:
+	echo Usage: $0 "[prot]" "[dir]"
+	echo
+	echo For protocol prot choose one of:
 	echo   ssh     - Use SSH for github
 	echo   https   - Use HTTPS for github
+	echo
+	echo dir is the target directory where the yocto environment will be generated.
 	exit 1
 fi
 
@@ -36,6 +40,9 @@ case $1 in
 		echo "Unsupported protocol:" $1
 		exit 1
 esac
+
+mkdir -p $2
+cd $2
 
 git clone -b $RELEASE $URL_POKY
 
