@@ -19,6 +19,7 @@ case $1 in
 		URL_POKY="git://git.yoctoproject.org/poky"
 		URL_OE="git@github.com:openembedded/meta-openembedded.git"
 		URL_TES="git@github.com:tes-gfx/meta-tes.git"
+		URL_QT5="git@github.com:tes-gfx/meta-qt5.git"
 		URL_ALTERA="git@github.com:tes-gfx/meta-altera.git"
 		URL_ALTERA_UPSTREAM="git@github.com:kraj/meta-altera"
 		URL_ARM="git@github.com:tes-gfx/meta-arm"
@@ -30,6 +31,7 @@ case $1 in
 		URL_POKY="https://git.yoctoproject.org/git/poky"
 		URL_OE="https://github.com/openembedded/meta-openembedded.git"
 		URL_TES="https://github.com/tes-gfx/meta-tes.git"
+		URL_QT5="https://github.com:tes-gfx/meta-qt5.git"
 		URL_ALTERA="https://github.com/tes-gfx/meta-altera.git"
 		URL_ALTERA_UPSTREAM="https://github.com/kraj/meta-altera"
 		URL_ARM="https://github.com/tes-gfx/meta-arm"
@@ -51,6 +53,7 @@ mkdir -p repos
 pushd repos
 git clone -b $RELEASE $URL_OE
 git clone -b $RELEASE $URL_TES
+git clone -b $RELEASE $URL_QT5
 git clone -b master $URL_ALTERA
 pushd meta-altera
 git remote add upstream $URL_ALTERA_UPSTREAM
