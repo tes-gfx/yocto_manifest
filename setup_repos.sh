@@ -1,4 +1,4 @@
-RELEASE=dunfell
+RELEASE=kirkstone
 
 if [ $# -ne 2 ]
 then
@@ -20,6 +20,7 @@ case $1 in
 		URL_OE="git@github.com:openembedded/meta-openembedded.git"
 		URL_TES="git@github.com:tes-gfx/meta-tes.git"
 		URL_QT5="git@github.com:tes-gfx/meta-qt5.git"
+		URL_QT5_UPSTREAM="git@github.com:meta-qt5/meta-qt5.git"
 		URL_ALTERA="git@github.com:tes-gfx/meta-altera.git"
 		URL_ALTERA_UPSTREAM="git@github.com:kraj/meta-altera"
 		URL_ARM="git@github.com:tes-gfx/meta-arm"
@@ -31,7 +32,8 @@ case $1 in
 		URL_POKY="https://git.yoctoproject.org/git/poky"
 		URL_OE="https://github.com/openembedded/meta-openembedded.git"
 		URL_TES="https://github.com/tes-gfx/meta-tes.git"
-		URL_QT5="https://github.com:tes-gfx/meta-qt5.git"
+		URL_QT5="https://github.com/tes-gfx/meta-qt5.git"
+		URL_QT5_UPSTREAM="https://github.com/meta-qt5/meta-qt5.git"
 		URL_ALTERA="https://github.com/tes-gfx/meta-altera.git"
 		URL_ALTERA_UPSTREAM="https://github.com/kraj/meta-altera"
 		URL_ARM="https://github.com/tes-gfx/meta-arm"
@@ -54,6 +56,9 @@ pushd repos
 git clone -b $RELEASE $URL_OE
 git clone -b $RELEASE $URL_TES
 git clone -b $RELEASE $URL_QT5
+pushd meta-qt5
+git remote add upstream $URL_QT5_UPSTREAM
+popd
 git clone -b master $URL_ALTERA
 pushd meta-altera
 git remote add upstream $URL_ALTERA_UPSTREAM
