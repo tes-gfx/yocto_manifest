@@ -19,15 +19,23 @@ A dir parameter is required, pointing to the directory where the repos have been
 The script will create a folder "build_[TARGET]".
 
 ## Source Yocto build environment
-
+```
 	. ./poky/oe-init-build-env build_[TARGET] $BUILD_DIR
+```
 
 ## TES internal only: Update SVN credentials
 
 Update SVN credentials in ./conf/svn.inc
 
-Make sure to append "tesintern" to OVERRIDES variable in ./conf/local.conf.
+Make sure to append "tesintern" to OVERRIDES variable in `./conf/local.conf`.
 This will enable source fetching from internal SVN.
+
+## Overrides
+
+### de10
+
+When building for the DE10-Nano board, please make sure to append `de10` to `OVERRIDES` variable in `./conf/local.conf`.
+This is required to select the matching bootloader for the DE10 board.
 
 ## Build Yocto artifacts
 
@@ -37,15 +45,12 @@ This will enable source fetching from internal SVN.
 
 	bitbake [IMAGE-NAME] -c populate_sdk
 
-## Generate SD card image
+## Available SD card images
 
-* Stratix 10 SoCDK:
-  * 		wic create sdimage-tes-stratix10-socdk -e tes-davenx-evalkit-image
-* Arria 10 SoCDK:
-  * 		wic create sdimage-tes-arria10-socdk -e tes-davenx-evalkit-image
-* Arria 10 Dreamchip SoM:
-  * 		wic create sdimage-tes-dreamchip-arria10som -e tes-davenx-evalkit-image
-* Cyclone 5 DE0 Nano SoC:
-  * 		wic create sdimage-tes-cyclone5-de0-nano -e tes-ip-evalkit-image
-* Cyclone 5 DE0 Nano SoC w/ GPIO_0 LCD display:
-  * 		wic create sdimage-tes-cyclone5-de0-nano -e tes-dave2d-lcd-image
+* tes-davenx-evalkit-image - TES DaveNX EvalKit
+* tes-ip-evalkit-image - TES IP EvalKit (DaveHD, Dave2D, CDC, Warping Engine)
+* tes-dave2d-lcd-image - TES Dave2D EvalKit with LCD panel support for DE10-Nano board
+
+## SD card images
+
+The SD card images can be found in `tmp/deploy/images/[TARGET]` as `*.wic` files.
