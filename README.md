@@ -37,6 +37,12 @@ This will enable source fetching from internal SVN.
 When building for the DE10-Nano board, please make sure to append `de10` to `OVERRIDES` variable in `./conf/local.conf`.
 This is required to select the matching bootloader for the DE10 board.
 
+### tesdavenx
+For DAVE NX images, you have to add the `tesdavenx` override.
+
+### tesclosed
+To add closed source code, please add the `tesclosed` override.
+
 ## Build Yocto artifacts
 
 	bitbake virtual/bootloader
