@@ -26,6 +26,7 @@ cd $2
 . ./poky/oe-init-build-env $BUILD_DIR
 
 cp $BASE/templates/svn.inc ./conf/
+cp $BASE/templates/overrides.inc ./conf/
 cp $BASE/templates/bblayers.conf ./conf/
 cp $BASE/templates/local_$TARGET.conf ./conf/local.conf
 
@@ -34,4 +35,4 @@ echo YOCTOROOT = \"$(pwd)\" >> $BUILD_DIR/conf/bblayers.conf
 
 echo -------------------------------------------------------------------------------
 echo Source Bitbake environment with . ./poky/oe-init-build-env $BUILD_DIR
-echo Please update $BUILD_DIR/conf/svn.inc
+echo Please update $BUILD_DIR/conf/svn.inc and $BUILD_DIR/conf/overrides.inc
