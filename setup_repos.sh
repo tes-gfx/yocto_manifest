@@ -30,6 +30,21 @@ clone_or_skip()
 	fi
 }
 
+clone_or_pull()
+{
+	RELEASE=$1
+	URL=$2
+	DIR=$3
+	if [ -d "$3" ]; then
+		echo "Pull from $2"
+		pushd $DIR
+		git pull origin
+		popd
+	else
+		git clone -b $RELEASE $URL
+	fi
+}
+
 case $1 in
 
 	ssh)
@@ -74,7 +89,7 @@ mkdir -p repos
 pushd repos
 
 clone_or_skip $RELEASE $URL_OE meta-openembedded
-clone_or_skip $RELEASE $URL_TES meta-tes
+clone_or_pull $RELEASE $URL_TES meta-tes
 clone_or_skip $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
 clone_or_skip $RELEASE $URL_ALTERA meta-altera $URL_ALTERA_UPSTREAM
 clone_or_skip $RELEASE $URL_ARM meta-arm $URL_ARM_UPSTREAM
