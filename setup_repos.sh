@@ -90,8 +90,8 @@ pushd repos
 
 clone_or_skip $RELEASE $URL_OE meta-openembedded
 clone_or_pull $RELEASE $URL_TES meta-tes
-clone_or_skip $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
-clone_or_skip $RELEASE $URL_ALTERA meta-altera $URL_ALTERA_UPSTREAM
-clone_or_skip $RELEASE $URL_ARM meta-arm $URL_ARM_UPSTREAM
+clone_or_pull $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
+clone_or_pull $RELEASE $URL_ALTERA meta-altera $URL_ALTERA_UPSTREAM
+clone_or_pull $RELEASE $URL_ARM meta-arm $URL_ARM_UPSTREAM
 
 popd
