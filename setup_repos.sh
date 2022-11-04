@@ -12,6 +12,24 @@ then
 	exit 1
 fi
 
+clone_or_skip()
+{
+	RELEASE=$1
+	URL=$2
+	DIR=$3
+	UPSTREAM=$4
+	if [ -d "$3" ]; then
+		echo "Skipping $3"
+	else
+		git clone -b $RELEASE $URL
+		if [! -z $UPSTREAM]; then
+			pushd $DIR
+				git remote add upstream $UPSTREAM
+			popd
+		fi
+	fi
+}
+
 case $1 in
 
 	ssh)
@@ -48,23 +66,17 @@ esac
 mkdir -p $2
 cd $2
 
-git clone -b $RELEASE $URL_POKY
+clone_or_skip $RELEASE $URL_POKY poky
 
 mkdir -p downloads
 mkdir -p repos
+
 pushd repos
-git clone -b $RELEASE $URL_OE
-git clone -b $RELEASE $URL_TES
-git clone -b $RELEASE $URL_QT5
-pushd meta-qt5
-git remote add upstream $URL_QT5_UPSTREAM
-popd
-git clone -b master $URL_ALTERA
-pushd meta-altera
-git remote add upstream $URL_ALTERA_UPSTREAM
-popd
-git clone -b $RELEASE $URL_ARM
-pushd meta-arm
-git remote add upstream $URL_ARM_UPSTREAM
-popd
+
+clone_or_skip $RELEASE $URL_OE meta-openembedded
+clone_or_skip $RELEASE $URL_TES meta-tes
+clone_or_skip $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
+clone_or_skip $RELEASE $URL_ALTERA meta-altera $URL_ALTERA_UPSTREAM
+clone_or_skip $RELEASE $URL_ARM meta-arm $URL_ARM_UPSTREAM
+
 popd
