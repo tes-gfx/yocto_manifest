@@ -14,10 +14,10 @@ fi
 
 clone_or_skip()
 {
-	RELEASE=$1
-	URL=$2
-	DIR=$3
-	UPSTREAM=$4
+	local RELEASE=$1
+	local URL=$2
+	local DIR=$3
+	local UPSTREAM=$4
 	if [ -d "$3" ]; then
 		echo "Skipping $3"
 	else
@@ -32,9 +32,9 @@ clone_or_skip()
 
 clone_or_pull()
 {
-	RELEASE=$1
-	URL=$2
-	DIR=$3
+	local RELEASE=$1
+	local URL=$2
+	local DIR=$3
 	if [ -d "$3" ]; then
 		echo "Pull from $2"
 		pushd $DIR
