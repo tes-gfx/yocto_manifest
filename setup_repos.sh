@@ -41,6 +41,7 @@ clone_or_pull()
 		git pull origin
 		popd
 	else
+		echo "Cloning branch $RELEASE from $URL..."
 		git clone -b $RELEASE $URL
 	fi
 }
