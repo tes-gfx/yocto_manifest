@@ -22,7 +22,7 @@ clone_or_skip()
 		echo "Skipping $3"
 	else
 		git clone -b $RELEASE $URL
-		if [! -z $UPSTREAM]; then
+		if [ ! -z $UPSTREAM ]; then
 			pushd $DIR
 				git remote add upstream $UPSTREAM
 			popd

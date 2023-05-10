@@ -26,6 +26,7 @@ cd $2
 . ./poky/oe-init-build-env $BUILD_DIR
 
 cp $BASE/templates/svn.inc ./conf/
+cp $BASE/templates/tes_repos.inc ./conf/
 cp $BASE/templates/overrides.inc ./conf/
 cp $BASE/templates/bblayers.conf ./conf/
 cp $BASE/templates/local_$TARGET.conf ./conf/local.conf
