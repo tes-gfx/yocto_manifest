@@ -7,4 +7,5 @@ TES_DSW_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_deswizzler/${TES_SVN_BRANCH}"
 TES_TOOLS_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_tools"
 TES_LIBRARIES_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_libraries"
 TES_EVALKIT_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_evalkits/${TES_SVN_BRANCH}"
-
+TES_ABC_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_tools/axi_validation/trunk"
+TES_VD_SVN_PATH = "svn://svn.hamburg.tes/svn/tes_tools/virtual_display/trunk"
