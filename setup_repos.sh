@@ -1,4 +1,4 @@
-RELEASE=kirkstone
+RELEASE=nanbield
 
 if [ $# -ne 2 ]
 then
@@ -55,10 +55,11 @@ case $1 in
 		URL_TES="git@github.com:tes-gfx/meta-tes.git"
 		URL_QT5="git@github.com:tes-gfx/meta-qt5.git"
 		URL_QT5_UPSTREAM="git@github.com:meta-qt5/meta-qt5.git"
-		URL_ALTERA="git@github.com:tes-gfx/meta-altera.git"
-		URL_ALTERA_UPSTREAM="git@github.com:kraj/meta-altera"
+		URL_INTEL_FPGA_REFDES="git@github.com:tes-gfx/meta-intel-fpga-refdes.git"
+		URL_INTEL_FPGA_REFDES_UPSTREAM="git@github.com:altera-opensource/meta-intel-fpga-refdes.git"
 		URL_ARM="git@github.com:tes-gfx/meta-arm"
 		URL_ARM_UPSTREAM="git://git.yoctoproject.org/meta-arm"
+		URL_INTEL_FPGA="git://git.yoctoproject.org/meta-intel-fpga"
 		;;
 
 	https)
@@ -68,8 +69,8 @@ case $1 in
 		URL_TES="https://github.com/tes-gfx/meta-tes.git"
 		URL_QT5="https://github.com/tes-gfx/meta-qt5.git"
 		URL_QT5_UPSTREAM="https://github.com/meta-qt5/meta-qt5.git"
-		URL_ALTERA="https://github.com/tes-gfx/meta-altera.git"
-		URL_ALTERA_UPSTREAM="https://github.com/kraj/meta-altera"
+		URL_INTEL_FPGA_REFDES="https://github.com/tes-gfx/meta-intel-fpga-refdes.git"
+		URL_INTEL_FPGA_REFDES_UPSTREAM="https://github.com/altera-opensource/meta-intel-fpga-refdes.git"
 		URL_ARM="https://github.com/tes-gfx/meta-arm"
 		URL_ARM_UPSTREAM="https://git.yoctoproject.org/git/meta-arm"
 		;;
@@ -90,9 +91,10 @@ mkdir -p repos
 pushd repos
 
 clone_or_skip $RELEASE $URL_OE meta-openembedded
+clone_or_skip $RELEASE $URL_INTEL_FPGA meta-intel-fpga
 clone_or_pull $RELEASE $URL_TES meta-tes
-clone_or_pull $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
-clone_or_pull master $URL_ALTERA meta-altera $URL_ALTERA_UPSTREAM
+#clone_or_pull $RELEASE $URL_QT5 meta-qt5 $URL_QT5_UPSTREAM
 clone_or_pull $RELEASE $URL_ARM meta-arm $URL_ARM_UPSTREAM
+clone_or_pull $RELEASE $URL_INTEL_FPGA_REFDES meta-intel-fpga-refdes $URL_INTEL_FPGA_REFDES_UPSTREAM
 
 popd
