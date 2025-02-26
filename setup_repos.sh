@@ -69,6 +69,7 @@ case $1 in
 		URL_QT5_UPSTREAM="https://github.com/meta-qt5/meta-qt5.git"
 		URL_ARM="https://github.com/tes-gfx/meta-arm"
 		URL_ARM_UPSTREAM="https://git.yoctoproject.org/git/meta-arm"
+		URL_INTEL_FPGA="https://git.yoctoproject.org/git/meta-intel-fpga"
 		;;
 
 	*)
